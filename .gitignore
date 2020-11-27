@@ -11,3 +11,11 @@ Cargo.lock
 **/*.rs.bk
 
 .idea
+
+# NPM Deps
+**/node_modules
+**/package-lock.json
+
+# Generated App
+wasm-ui/target
+wasm-ui/pkg

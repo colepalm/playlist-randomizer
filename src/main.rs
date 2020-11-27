@@ -7,6 +7,11 @@ fn index() -> &'static str {
     "Hello, world!"
 }
 
+#[get("/randomize")]
+fn randomize() -> &'static str {
+
+}
+
 fn main() {
-    rocket::ignite().mount("/", routes![index]).launch();
+    rocket::ignite().mount("/", routes![index, randomize]).launch();
 }
