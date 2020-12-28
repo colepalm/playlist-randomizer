@@ -1,40 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Randomizer UI</title>
-        <style type="text/css">
-            #login {
-                display: none;
-            }
-
-            #loggedin {
-                display: none;
-            }
-        </style>
-    </head>
-    <body>
-        <script src="./index.js"></script>
-        <script id="loggedin-template" type="text/x-handlebars-template">
-            <h1>Logged in as </h1>
-            <img id="avatar" width="200" src="" />
-            <dl>
-                <dt>Display name</dt><dd></dd>
-                <dt>Username</dt><dd></dd>
-                <dt>Email</dt><dd></dd>
-                <dt>Spotify URI</dt><dd><a href=""></a></dd>
-                <dt>Link</dt><dd><a href=""></a></dd>
-                <dt>Profile Image</dt><dd></dd>
-            </dl>
-            <p><a href="/">Log in again</a></p>
-        </script>
-        <div>
-            <div id="login">
-                <h1>First, log in to spotify</h1>
-                <a href="/login">Log in</a>
-            </div>
-            <div id="loggedin">
-            </div>
-        </div>
-    </body>
+<head>
+    <meta charset="utf-8">
+    <title>Yew Sample App</title>
+    <script type="module">
+        import init from "./wasm.js"
+        init()
+    </script>
+</head>
+<body></body>
 </html>
