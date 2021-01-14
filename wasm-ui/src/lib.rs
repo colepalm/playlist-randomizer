@@ -5,6 +5,9 @@ use yew::prelude::*;
 
 struct Model {
     value: i64,
+    client_id: & 'static str,
+    client_secret: & 'static str,
+    redirect_uri: & 'static str
 }
 
 enum Msg { }
@@ -15,6 +18,9 @@ impl Component for Model {
     fn create(_: Self::Properties, link: ComponentLink<Self>) -> Self {
         Self {
             value: 0,
+            client_id: "6e53103644d24100984110dbc4d61bdf",
+            client_secret: "753618640480407284c304ffa247fbe6",
+            redirect_uri: "http://localhost:8080"
         }
     }
 
