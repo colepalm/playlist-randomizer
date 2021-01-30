@@ -1,3 +1,5 @@
+#![recursion_limit="256"]
+
 use yew::prelude::*;
 use yew_router::{route::Route, switch::Permissive};
 
@@ -125,26 +127,8 @@ impl Model {
 
     fn switch(switch: PublicUrlSwitch) -> Html {
         match switch.route() {
-            AppRoute::Post(id) => {
-                html! { <Post seed=id /> }
-            }
-            AppRoute::PostListPage(page) => {
-                html! { <PostList page=page.max(1) /> }
-            }
-            AppRoute::PostList => {
-                html! { <PostList page=1 /> }
-            }
-            AppRoute::Author(id) => {
-                html! { <Author seed=id /> }
-            }
-            AppRoute::AuthorList => {
-                html! { <AuthorList /> }
-            }
-            AppRoute::Home => {
-                html! { <Home /> }
-            }
-            AppRoute::PageNotFound(Permissive(route)) => {
-                html! { <PageNotFound route=route /> }
+            AppRoute::Login() => {
+                html! { <Login /> }
             }
         }
     }

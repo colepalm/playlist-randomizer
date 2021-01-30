@@ -20,7 +20,7 @@ impl component for Login {
     }
 
     fn view(&self) -> Html {
-        let self { Login } = self;
+        let self { Login: login } = self;
 
         html! {
             <div>{ "login!" }</div>
