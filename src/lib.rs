@@ -1,9 +1,9 @@
 use yew::prelude::*;
 use yew_router::{route::Route, switch::Permissive};
 
-mod components;
-mod content;
-mod generator;
+// mod components;
+// mod content;
+// mod generator;
 mod pages;
 use pages::{
     author::Author, author_list::AuthorList, home::Home, page_not_found::PageNotFound, post::Post,

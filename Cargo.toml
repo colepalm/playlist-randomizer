@@ -1,18 +1,12 @@
 [package]
-name = "playlist-randomizer"
+name = "randomizer-ui"
 version = "0.1.0"
 authors = ["colepalm <palm.cole@gmail.com>"]
 edition = "2018"
 
-[dependencies]
-rocket = "0.4.5"
-rocket_codegen = "0.4.5"
-rspotify = '0.10.0'
-serde = "1.0"
-serde_json = "1.0"
-serde_derive = "1.0"
+[lib]
+crate-type = ["cdylib", "rlib"]
 
-[dependencies.rocket_contrib]
-version = "*"
-default-features = false
-features = ["json"]
+[dependencies]
+yew = "0.17.4"
+wasm-bindgen = "0.2"
