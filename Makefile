@@ -1,7 +1,7 @@
 # Writes WASM UI to /static directory
-compile-ui:
-	wasm-pack build --target web --out-name wasm --out-dir ../static
+compile:
+	wasm-pack build --target web
 
 # Serves application at port 8080
 serve:
-	miniserve ./static --index index.html
+	miniserve . --index index.html

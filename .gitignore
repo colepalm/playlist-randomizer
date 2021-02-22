@@ -17,5 +17,4 @@ Cargo.lock
 **/package-lock.json
 
 # Generated App
-wasm-ui/target
-wasm-ui/pkg
+pkg

@@ -1,8 +1,12 @@
 [package]
-name = "randomizer-ui"
+name = "playlist-randomizer"
 version = "0.1.0"
 authors = ["colepalm <palm.cole@gmail.com>"]
 edition = "2018"
+categories = ["wasm"]
+description = "Randomizes a playlist from a spotify user"
+license = "Apache-2.0/MIT"
+
 
 [lib]
 crate-type = ["cdylib", "rlib"]
