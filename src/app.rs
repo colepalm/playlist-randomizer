@@ -29,7 +29,9 @@ impl Component for App {
     fn view(&self) -> Html {
         return html! {
             <div>
-               <p> {"Init"} </p>
+                <div>
+                    <a href="/login"> {"First, login to Spotify"} </a>
+                </div>
             </div>
         }
     }
