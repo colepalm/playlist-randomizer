@@ -1,12 +1,15 @@
 use yew::prelude::*;
 use std::env;
 
+const CLIENT_ID: &'static str = "6e53103644d24100984110dbc4d61bdf";
+const CLIENT_SECRET: String = String::from("");
+const REDIRECT_URI: &'static str = "https://localhost:8080/callback";
+const SCOPES: &'static str = "user-read-private user-read-email";
+
+
+
 pub struct App {
     link: ComponentLink<Self>,
-    client_id: &'static str,
-    client_secret: String,
-    redirect_uri: &'static str,
-    scopes: &'static str
 }
 
 pub enum Msg {
@@ -18,19 +21,12 @@ impl Component for App {
     type Properties = ();
 
     fn create(_: Self::Properties, link: ComponentLink<Self>) -> Self {
-        let client_secret;
         match env::var("CLIENT_SECRET") {
-            Ok(val) => client_secret = val,
-            Err(_e) => client_secret = "none".to_string(),
+            Ok(val) => CLIENT_SECRET = val,
+            Err(_e) => CLIENT_SECRET = "none".to_string(),
         }
 
-        App {
-            link,
-            client_id: "6e53103644d24100984110dbc4d61bdf",
-            client_secret,
-            redirect_uri: "https://localhost:8080/callback",
-            scopes: "user-read-private user-read-email"
-        }
+        App { link }
     }
 
     fn update(&mut self, msg: Self::Message) -> ShouldRender {
