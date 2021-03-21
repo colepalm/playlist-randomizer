@@ -1,3 +1,4 @@
+use crate::components::button::Button;
 use yew::prelude::*;
 use std::env;
 
@@ -6,14 +7,12 @@ const CLIENT_SECRET: String = String::from("");
 const REDIRECT_URI: &'static str = "https://localhost:8080/callback";
 const SCOPES: &'static str = "user-read-private user-read-email";
 
-
-
 pub struct App {
     link: ComponentLink<Self>,
 }
 
 pub enum Msg {
-    Yo,
+    Login,
 }
 
 impl Component for App {
@@ -30,6 +29,11 @@ impl Component for App {
     }
 
     fn update(&mut self, msg: Self::Message) -> ShouldRender {
+        match msg {
+            Msg::Login => {
+                self.counter += 1;
+            }
+        }
         true
     }
 
@@ -40,9 +44,7 @@ impl Component for App {
     fn view(&self) -> Html {
         return html! {
             <div>
-                <div>
-                    <a href="/login"> {"First, login to Spotify"} </a>
-                </div>
+                <Login onsignal=self.link.callback(|_| Msg::Login) />
             </div>
         }
     }
