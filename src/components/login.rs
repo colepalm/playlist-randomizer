@@ -20,7 +20,7 @@ impl Component for Login {
     type Properties = Props;
 
     fn create(props: Self::Properties, link: ComponentLink<Self>) -> Self {
-        Button {
+        Login {
             link,
             onsignal: props.onsignal,
         }
