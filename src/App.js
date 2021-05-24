@@ -1,24 +1,16 @@
 import React, { Component } from "react";
 import "./App.css";
 
-export const authEndpoint = 'https://accounts.spotify.com/authorize';
-const clientId = process.env.REACT_APP_CLIENT_ID;
-const redirectUri = "http://localhost:3000/auth-callback";
-const scopes = [
-  "user-read-currently-playing",
-  "user-read-playback-state",
-];
-
 // Get the hash of the url
 const hash = window.location.hash
     .substring(1)
     .split("&")
     .reduce(function(initial, item) {
-      if (item) {
-        var parts = item.split("=");
-        initial[parts[0]] = decodeURIComponent(parts[1]);
-      }
-      return initial;
+        if (item) {
+            var parts = item.split("=");
+            initial[parts[0]] = decodeURIComponent(parts[1]);
+        }
+        return initial;
     }, {});
 window.location.hash = "";
 
@@ -54,7 +46,7 @@ class App extends Component {
             {!this.state.token && (
                 <a
                     className="btn btn--loginApp-link"
-                    href={`${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join("%20")}&response_type=token&show_dialog=true`}
+                    href={`http://localhost:3000/login`}
                 >
                   Login to Spotify
                 </a>
