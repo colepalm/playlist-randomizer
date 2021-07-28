@@ -23,9 +23,6 @@ export class Login extends Component {
                                 Login to Spotify
                             </a>
                         )}
-                        {/*{this.state.token && (*/}
-                        {/*    // Spotify Player Will Go Here In the Next Step*/}
-                        {/*)}*/}
                     </header>
                 </div>
             </div>
