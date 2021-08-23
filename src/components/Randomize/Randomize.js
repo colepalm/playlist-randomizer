@@ -19,7 +19,7 @@ export class Randomize extends React.Component {
                 (result) => {
                     this.setState({
                         isLoaded: true,
-                        playlist: result.playlist
+                        playlist: result
                     });
                 },
                 (error) => {
