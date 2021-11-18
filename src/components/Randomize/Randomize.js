@@ -13,7 +13,7 @@ export class Randomize extends React.Component {
     }
 
     componentDidMount() {
-        fetch("http://localhost:3000")
+        fetch("https://playlist-randomizer-api.herokuapp.com/randomize")
             .then(res => res.json())
             .then(
                 (result) => {
