@@ -18,7 +18,7 @@ export class Login extends Component {
                     <header className="App-header">
                         {!this.state.loggedIn && (
                             <a className="btn btn--loginApp-link"
-                               href={`https://playlist-randomizer-api.herokuapp.com/login`}
+                               href={`http://localhost:3000/login`}
                             >
                                 Login to Spotify
                             </a>
