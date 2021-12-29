@@ -1,14 +1,16 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
-// import styles from './Randomize.module.css';
+
+import { Redirect } from 'react-router-dom';
 
 export class Randomize extends React.Component {
-    constructor(props) {
-        super(props);
+    constructor(props, context) {
+        super(props, context);
+
         this.state = {
             error: null,
             isLoaded: false,
-            playlist: ''
+            playlist: '',
+            loginState: localStorage.getItem("logged-in")
         };
     }
 
@@ -32,7 +34,10 @@ export class Randomize extends React.Component {
     }
 
     render() {
-        const { error, isLoaded, playlist } = this.state;
+        const { error, isLoaded, playlist, loginState } = this.state;
+        if (loginState) {
+            return <Redirect to="/login"/>
+        }
         if (error) {
             return <div>Error: {error.message}</div>;
         } else if (!isLoaded) {
@@ -44,3 +49,5 @@ export class Randomize extends React.Component {
         }
     }
 }
+
+export default Randomize
