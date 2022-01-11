@@ -6,13 +6,20 @@ export class Randomize extends React.Component {
     constructor(props, context) {
         super(props, context);
 
+        fetch("https://playlist-randomizer-api.herokuapp.com/check")
+            .then(res =>
+                res.status === 401 ? this.state.loggedIn = false : this.state.loggedIn = true
+            )
+
         this.state = {
             error: null,
             isLoaded: false,
             playlist: '',
-            loginState: localStorage.getItem("logged-in")
+            loggedIn: true
         };
     }
+
+
 
     componentDidMount() {
         fetch("https://playlist-randomizer-api.herokuapp.com/randomize")
@@ -34,8 +41,8 @@ export class Randomize extends React.Component {
     }
 
     render() {
-        const { error, isLoaded, playlist, loginState } = this.state;
-        if (loginState) {
+        const { error, isLoaded, playlist, loggedIn } = this.state;
+        if (!loggedIn) {
             return <Redirect to="/login"/>
         }
         if (error) {
