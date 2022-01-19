@@ -51,7 +51,7 @@ export class Randomize extends React.Component {
             return <div>Loading...</div>;
         } else {
             return (
-                <a href={playlist.href}>{playlist.name}</a>
+                <p>{playlist.name}</p>
             );
         }
     }
