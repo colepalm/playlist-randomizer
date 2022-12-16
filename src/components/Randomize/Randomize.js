@@ -1,12 +1,13 @@
 import React from 'react';
-
 import { Redirect } from 'react-router-dom';
+
+import { BASE_URL } from "../../global/baseUrl";
 
 export class Randomize extends React.Component {
     constructor(props, context) {
         super(props, context);
 
-        fetch("https://playlist-randomizer-api.herokuapp.com/check")
+        fetch(`${BASE_URL}/check`)
             .then(res =>
                 res.status === 401 ? this.state.loggedIn = false : this.state.loggedIn = true
             )
@@ -22,7 +23,7 @@ export class Randomize extends React.Component {
 
 
     componentDidMount() {
-        fetch("https://playlist-randomizer-api.herokuapp.com/randomize")
+        fetch(`${BASE_URL}/randomize`)
             .then(res => res.json())
             .then(
                 (result) => {

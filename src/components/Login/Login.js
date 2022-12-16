@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
 
 import styles from './Login.module.css';
+import { BASE_URL } from "../../global/baseUrl";
 
 export class Login extends Component {
     constructor(props) {
@@ -18,7 +18,7 @@ export class Login extends Component {
                     <header className="App-header">
                         {!this.state.loggedIn && (
                             <a
-                               href={`https://playlist-randomizer-api.herokuapp.com/login`}
+                               href={`${BASE_URL}/login`}
                             >
                                 Login to Spotify
                             </a>
